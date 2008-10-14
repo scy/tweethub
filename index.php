@@ -22,6 +22,10 @@ if (!function_exists('curl_init'))
 
 $json = @$_POST['payload'];
 
+// If a file called 'input' exists, use that as payload (for debugging).
+if (file_exists('input'))
+	$json = file_get_contents('input');
+
 // Die if there's no payload.
 if ($json == null)
 	fin('No payload.');
@@ -74,7 +78,7 @@ foreach ($data['commits'] as $commit) {
 	curl_setopt($curl, CURLOPT_POSTFIELDS, 'status=' . urlencode($text));
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($curl, CURLOPT_USERPWD, $user . ':' . $pass);
-	curl_setopt($curl, CURLOPT_NOBODY, true);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	curl_exec($curl);
 	curl_close($curl);
 }
