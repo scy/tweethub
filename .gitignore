@@ -1,2 +1,6 @@
 *.php
 !tweethub.php
+
+log.txt
+payload
+input
