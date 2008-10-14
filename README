@@ -1,0 +1,68 @@
+
+   TweetHub - GitHub notifications to Twitter
+   ==========================================
+
+TweetHub is a small tool to post a commit message to a Twitter[1] account once 
+a repository on GitHub[2] has been updated.
+
+It can be installed on any web server that runs PHP 5.2 or higher. Since 
+there's no polling but GitHub's web hooks being used, you don't need support 
+for cron jobs on your server.
+
+[1] http://twitter.com/
+[2] http://github.com/
+
+
+ A b o u t   T w e e t H u b
+ ---------------------------
+
+TweetHub was written by Tim 'Scytale' Weber and is licensed under the terms of 
+the X11 license.
+
+Project page:       https://scytale.name/proj/tweethub/
+Git repository:     git://github.com/scy/tweethub.git
+Twitter account:    http://twitter.com/Tw33tHub
+     of Scytale:    http://twitter.com/Scytale
+
+
+ R e q u i r e m e n t s
+ -----------------------
+
+* PHP 5.2 or higher
+  * JSON extension (enabled by default)
+  * cURL extension
+
+* Apache Web Server (others not tested, contact me if it works elsewhere)
+
+
+ I n s t a l l a t i o n
+ -----------------------
+
+ - Get the source and unpack it to a directory on your web server. You can use 
+   "git clone git://github.com/scy/tweethub.git" if you want, that'll simplify 
+   updating later on.
+
+ - Copy config.php.dist to config.php and edit it to your needs.
+
+ - Symlink (recommended), copy or move tweethub.php to some other name. Why? 
+   Because otherwise, everyone knowing your GitHub project's name could send 
+   updates to TweetHub. Use a random name like JasUD89Dfoe.php.
+
+ - Open the URL to the file you symlinked tweethub.php to in your browser. You 
+   should see the message "no payload".
+
+ - In GitHub, go to the "Admin" page of your project and enter the URL into 
+   "Post-Receive URL". If you want, send a test.
+
+ - That should be it. Have fun!
+
+
+ F r e q u e n t l y   A s k e d   Q u e s t i o n s
+ ---------------------------------------------------
+
+ - Why are the updates to Twitter not instantly after my "git push" returns?
+   Because GitHub has some delay between receiving the push and calling the 
+   web hook. There's nothing TweetHub can do about it.
+
+
+// vim: set fo+=nat tw=78 et ai: //
