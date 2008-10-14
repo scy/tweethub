@@ -2,6 +2,8 @@
 
 function fin($text, $die = true) {
 	$fp = @fopen('log.txt', 'a');
+	if (!debug())
+		$fp = false;
 	if ($fp !== false) {
 		@fwrite($fp, date('r') . " $text\n");
 		fclose($fp);
@@ -10,7 +12,13 @@ function fin($text, $die = true) {
 		die($text);
 }
 
-file_put_contents('payload', $_POST['payload']);
+function debug() {
+	return (defined('TWEETHUB_DEBUG') && (TWEETHUB_DEBUG == true));
+}
+
+// In debug mode, store the supplied payload.
+if (debug())
+	file_put_contents('payload', $_POST['payload']);
 
 // Die if the JSON library is not available.
 if (!function_exists('json_decode'))
@@ -22,8 +30,8 @@ if (!function_exists('curl_init'))
 
 $json = @$_POST['payload'];
 
-// If a file called 'input' exists, use that as payload (for debugging).
-if (file_exists('input'))
+// If a file called 'input' exists, use that as payload (in debug mode).
+if (debug() && file_exists('input'))
 	$json = file_get_contents('input');
 
 // Die if there's no payload.

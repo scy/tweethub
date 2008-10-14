@@ -1,0 +1,25 @@
+<?php
+
+// Switch this to "true" to enable debug features like logging or payload testing.
+define('TWEETHUB_DEBUG', false);
+
+// Configuration as a multi-dimensional associative array.
+// Top-level keys use the format 'user/project' as they appear in GitHub URLs.
+// Twitter user name and password should be self-explaining.
+
+$CONF = array(
+	'scy/oqlt' => array(
+		'twitter' => array(
+			'user' => 'oqlt',
+			'pass' => 'asd123foobar',
+		),
+	),
+	'scy/tweethub' => array(
+		'twitter' => array(
+			'user' => 'phptweethub',
+			'pass' => 'xyzzy',
+		),
+	),
+);
+
+?>
