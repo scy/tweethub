@@ -87,7 +87,8 @@ foreach ($data['commits'] as $commit) {
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($curl, CURLOPT_USERPWD, $user . ':' . $pass);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-	curl_exec($curl);
+	$ret = curl_exec($curl);
+	fin('Twitter reply (code ' . curl_getinfo($curl, CURLINFO_HTTP_CODE) . "):\n$ret");
 	curl_close($curl);
 }
 
