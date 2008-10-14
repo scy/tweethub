@@ -1,12 +1,12 @@
 <?php
 
 function fin($text, $die = true) {
-	$fp = @fopen('log.txt', 'a');
-	if (!debug())
-		$fp = false;
-	if ($fp !== false) {
-		@fwrite($fp, date('r') . " $text\n");
-		fclose($fp);
+	if (debug()) {
+		$fp = @fopen('log.txt', 'a');
+		if ($fp !== false) {
+			@fwrite($fp, date('r') . " $text\n");
+			fclose($fp);
+		}
 	}
 	if ($die)
 		die($text);
