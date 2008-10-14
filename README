@@ -17,7 +17,9 @@ for cron jobs on your server.
  ---------------------------
 
 TweetHub was written by Tim 'Scytale' Weber and is licensed under the terms of 
-the X11 license.
+the X11 license, see the LICENSE file.
+
+This project is _active_, patches and ideas are encouraged.
 
 Project page:       https://scytale.name/proj/tweethub/
 Git repository:     git://github.com/scy/tweethub.git

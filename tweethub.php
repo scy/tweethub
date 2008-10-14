@@ -1,5 +1,9 @@
 <?php
 
+// TweetHub, (c) 2008 Tim 'Scytale' Weber.
+// https://scytale.name/proj/tweethub/
+// Licensed under the X11 license, see LICENSE file.
+
 function fin($text, $die = true) {
 	if (debug()) {
 		$fp = @fopen('log.txt', 'a');
