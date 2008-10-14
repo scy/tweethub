@@ -1,0 +1,6 @@
+# This file will deny access to the index.php file.
+# You need to symlink, copy or rename it to make TweetHub work.
+# This is really recommended to prevent non-GitHub-originated tweets.
+
+RewriteEngine On
+RewriteRule ^(index\.php)?$ - [F]
