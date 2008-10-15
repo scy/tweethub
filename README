@@ -73,5 +73,15 @@ Twitter account:    http://twitter.com/Tw33tHub
    and your commit won't be twittered. This should happen relatively seldom, 
    though.
 
+ - What's bad about the built-in GitHub to Twitter integration, i.e. why did 
+   you create this project at all?
+   Honestly? Because GitHub's Twitter integration was hidden well enough to 
+   keep me from finding it. In English: I didn't know that there's already an 
+   integration. But TweetHub still has its advantages: You don't need to give 
+   TweetHub your Twitter password, you can change the commit messages and you 
+   get is.gd URL shortening instead of tinyurl.com. I have not tested GitHub's 
+   Twitter functionality, so I can't tell if theirs is more reliable or 
+   faster, nor if there are any other differences I did not mention.
+
 
 // vim: set fo+=nat tw=78 et ai: //
