@@ -87,7 +87,7 @@ foreach ($data['commits'] as $commit) {
 		continue;
 	fin('Twittering: ' . $text, false);
 	curl_setopt($curl, CURLOPT_POST, true);
-	curl_setopt($curl, CURLOPT_POSTFIELDS, 'status=' . urlencode($text));
+	curl_setopt($curl, CURLOPT_POSTFIELDS, 'source=tweethub&status=' . urlencode($text));
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($curl, CURLOPT_USERPWD, $user . ':' . $pass);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
