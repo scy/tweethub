@@ -66,5 +66,12 @@ Twitter account:    http://twitter.com/Tw33tHub
    Because GitHub has some delay between receiving the push and calling the 
    web hook. There's nothing TweetHub can do about it.
 
+ - I've committed something, but it doesn't show up on Twitter, even after 
+   waiting some minutes. What happen?
+   TweetHub is designed to be pretty simple. If the call to is.gd for URL 
+   shortening or the Twitter API call fails, no further attempt will be made 
+   and your commit won't be twittered. This should happen relatively seldom, 
+   though.
+
 
 // vim: set fo+=nat tw=78 et ai: //
