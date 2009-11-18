@@ -1,7 +1,6 @@
 These are the things I can currently think of. I'm happy about any patches 
 implementing some of these.
 
- - Format strings for defining the tweets.
  - Tweet length checking.
  - Better error checking and handling.
  - Ability to post to several Twitter accounts at once.

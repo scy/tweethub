@@ -6,6 +6,10 @@ define('TWEETHUB_DEBUG', false);
 // Configuration as a multi-dimensional associative array.
 // Top-level keys use the format 'user/project' as they appear in GitHub URLs.
 // Twitter user name and password should be self-explaining.
+// You can change the tweet context using the 'format' parameter, which is a
+// standard PHP sprintf() string. Available parameters are:
+//  1: Shortened URL
+//  2: (Currently unshortened) first line of commit message
 
 $CONF = array(
 	'scy/oqlt' => array(
@@ -19,6 +23,7 @@ $CONF = array(
 			'user' => 'phptweethub',
 			'pass' => 'xyzzy',
 		),
+		'format' => 'New: %2$s %1$s',
 	),
 );
 

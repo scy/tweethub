@@ -62,6 +62,12 @@ require_once('config.php');
 if (!array_key_exists($proj, $CONF))
 	fin('No such project configured.');
 
+// Get format string.
+if (!array_key_exists('format', $CONF[$proj]))
+	$format = 'Commit: %2$s %1$s';
+else
+	$format = $CONF[$proj]['format'];
+
 // Check if Twitter is configured for this project.
 $user = $CONF[$proj]['twitter']['user'];
 $pass = $CONF[$proj]['twitter']['pass'];
@@ -81,7 +87,7 @@ foreach ($data['commits'] as $commit) {
 	curl_close($curl);
 	if ($rcode != 200)
 		continue;
-	$text = 'Commit: ' . $message[0] . ' ' . $ret;
+	$text = sprintf($format, $ret, $message[0]);
 	$curl = curl_init('https://twitter.com/statuses/update.json');
 	if ($curl === false)
 		continue;
